@@ -46,3 +46,4 @@ def get_latest_devices(db: Session = Depends(get_db)):
         if latest:
             result.append(vars(latest))
     return result
+

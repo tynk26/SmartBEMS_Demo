@@ -3,7 +3,7 @@ from backend.db.models import DeviceData
 from backend.devices.simulator import generate_device_data
 import time
 
-DEVICE_IDS = [f"device_{i}" for i in range(1, 4)]  # 3 devices for demo
+DEVICE_IDS = [f"device_{i}" for i in range(1, 20)]  # 20 devices for demo
 
 def save_device_data():
     db = SessionLocal()

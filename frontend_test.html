@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+    <title>SmartBEMS WebSocket Test</title>
+  </head>
+  <body>
+    <h1>Real-time Device Data</h1>
+    <pre id="output">Connecting...</pre>
+
+    <script>
+      // Connect to WebSocket server
+      const ws = new WebSocket("ws://127.0.0.1:8001/ws/devices");
+      const output = document.getElementById("output");
+
+      ws.onopen = () => {
+        output.innerText = "Connected! Waiting for data...";
+      };
+
+      ws.onmessage = (event) => {
+        const data = JSON.parse(event.data);
+        // Pretty-print JSON to the <pre> tag
+        output.innerText = JSON.stringify(data, null, 2);
+      };
+
+      ws.onclose = () => {
+        output.innerText += "\nDisconnected from server";
+      };
+
+      ws.onerror = (err) => {
+        output.innerText += "\nWebSocket error: " + err;
+      };
+    </script>
+  </body>
+</html>
