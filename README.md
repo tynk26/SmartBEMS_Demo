@@ -6,8 +6,16 @@
 🏗️ 아키텍처 개요
 
 [Simulated Devices]  
-[Cron Job / Device Simulator] <br>-> [SQLite DB] <br>-> [Backend (Python + FastAPI)] <br>-> 1) REST API (/devices) <br>- 2) WebSocket (/ws/devices)
-[WebSocket Test HTML Dashboard]
+🏗️ 아키텍처 개요
+[Simulated Devices] <br>
+↓ <br>
+[Cron Job / Device Simulator] <br>
+↓ <br>
+[SQLite DB] <br>
+↓ <br>
+[Backend (Python + FastAPI)] <br> - 1) REST API (/devices) <br> - 2) WebSocket (/ws/devices) <br>
+↓ <br>
+[WebSocket Test HTML Dashboard]<br>
 (실시간 데이터 확인 및 시각화)
 
 장치 데이터 시뮬레이션: BACnet/Modbus 장치를 모방하여 임의 데이터 생성
@@ -23,15 +31,13 @@ WebSocket: 실시간 데이터 푸시를 통해 클라이언트에서 즉시 확
 🛠️ 설치 및 실행 가이드
 1️⃣ 장치 데이터 시뮬레이션
 1-1. 데이터베이스 테이블 생성
-python -m backend.db.init_db
+python -m backend.db.init_db<br>
 
 1-2. 장치 데이터 시뮬레이션 실행
-python backend/devices/simulator.py
+python backend/devices/simulator.py <br>
 
 1-3. Cron Job으로 주기적 데이터 삽입
-python -m backend.cron_jobs.fetch_device_data
-
-프로젝트 루트에서 실행하며, SQLite DB에 장치 데이터가 5초마다 삽입됩니다.
+python -m backend.cron_jobs.fetch_device_data <br>
 
 프로젝트 루트에서 실행하며, SQLite DB에 장치 데이터가 5초마다 삽입됩니다.
 
@@ -43,40 +49,40 @@ http://127.0.0.1:8000/devices
 
 3️⃣ WebSocket 실시간 데이터
 3-1. WebSocket 서버 실행
-uvicorn backend.api.websocket:app --reload --port 8001
+uvicorn backend.api.websocket:app --reload --port 8001 <br>
 
 3-2. 프론트엔드 테스트 서버 실행
-python -m http.server 5500
+python -m http.server 5500 <br>
 
 3-3. WebSocket 클라이언트 접속
 
 브라우저에서 다음 주소 열기:
-http://127.0.0.1:5500/websocket.html
+http://127.0.0.1:5500/websocket.html <br>
 
 WebSocket 서버에서 실시간으로 전송되는 장치 데이터를 HTML 페이지에서 확인할 수 있습니다.
 
 4️⃣ 프로젝트 구조
-SmartBEMS/
-│
-├─ backend/
-│ ├─ devices/
-│ │ └─ simulator.py # BACnet/Modbus 장치 데이터 시뮬레이터
-│ │
-│ ├─ db/
-│ │ ├─ models.py # DB 모델 정의 (SQLAlchemy)
-│ │ └─ init_db.py # DB 초기화
-│ │
-│ ├─ cron_jobs/
-│ │ └─ fetch_device_data.py # 주기적 데이터 삽입
-│ │
-│ └─ api/
-│ ├─ rest.py # REST API
-│ └─ websocket.py # WebSocket 서버
-│
-├─ frontend_test.html # 실시간 데이터 확인용 프론트엔드
-├─ requirements.txt
-└─ README.md
-
+SmartBEMS/ <br>
+│ <br>
+├─ backend/ <br>
+│ ├─ devices/ <br>
+│ │ └─ simulator.py # BACnet/Modbus 장치 데이터 시뮬레이터 <br>
+│ │ <br>
+│ ├─ db/ <br>
+│ │ ├─ models.py # DB 모델 정의 (SQLAlchemy) <br>
+│ │ └─ init_db.py # DB 초기화<br>
+│ │ <br>
+│ ├─ cron_jobs/ <br>
+│ │ └─ fetch_device_data.py # 주기적 데이터 삽입 <br>
+│ │ <br>
+│ └─ api/ <br>
+│ ├─ rest.py # REST API <br>
+│ └─ websocket.py # WebSocket 서버 <br>
+│ <br>
+├─ frontend_test.html # 실시간 데이터 확인용 프론트엔드<br>
+├─ requirements.txt<br>
+└─ README.md<br>
+<br>
 5️⃣ 주요 특징
 
 SQLite DB 기반 실시간 장치 데이터 시뮬레이션
