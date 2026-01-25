@@ -1,10 +1,18 @@
-📌 프로젝트 개요
+<img width="1216" height="596" alt="image" src="https://github.com/user-attachments/assets/405b0151-0a6e-4330-a350-b8dc44ba761c" />📌 프로젝트 개요
 
 이 프로젝트는 BACnet/Modbus 장치 데이터를 시뮬레이션하고, SQLite DB에 저장하며, REST API와 WebSocket을 통해 데이터를 실시간으로 제공하는 백엔드 시스템입니다.
 포트폴리오용으로 설계되었으며, 실제 AI DCIM/Smart BEMS 시스템에서 수행했던 데이터 수집, 실시간 모니터링, CRUD 작업, WebSocket 실시간 전송을 시뮬레이션합니다.
+1. REST API
+실행: 
+uvicorn backend.api.rest:app --reload
+모든 장치 데이터 확인:
+http://127.0.0.1:8000/devices
+<img width="2101" height="1453" alt="image" src="https://github.com/user-attachments/assets/9e1aed73-4a1b-4e7c-a43a-db0cd8ad0231" />
 
+2. WEBSOCKET
 <br># Terminal 1: DB initialization (once)
 python -m backend.db.init_db
+<img width="978" height="410" alt="image" src="https://github.com/user-attachments/assets/d71b6bd9-5db7-4569-b589-be5bc6660a26" />
 
 <br># Terminal 2: Start cron job simulator
 python -m backend.cron_jobs.fetch_device_data
@@ -14,6 +22,7 @@ uvicorn backend.api.websocket:app --reload --port 8001
 
 <br># Terminal 4: Serve frontend
 python -m http.server 5500
+<img width="1216" height="596" alt="image" src="https://github.com/user-attachments/assets/247c660f-fb9c-4d58-bcf4-06fb7dd1dc51" />
 
 🏗️ 아키텍처 개요
 [Simulated Devices] <br>
