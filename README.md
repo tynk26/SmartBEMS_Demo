@@ -15,7 +15,7 @@
                                   +-------------------------------+
                                                   |
                                                   v
-                                    [Frontend Test HTML Dashboard]
+                                    [Websocket Test HTML Dashboard]
                                   (실시간 데이터 확인 및 시각화)
 
 
@@ -60,7 +60,7 @@ python -m http.server 5500
 3-3. WebSocket 클라이언트 접속
 
 브라우저에서 다음 주소 열기:
-http://127.0.0.1:5500/frontend_test.html
+http://127.0.0.1:5500/websocket.html
 
 WebSocket 서버에서 실시간으로 전송되는 장치 데이터를 HTML 페이지에서 확인할 수 있습니다.
 
