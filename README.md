@@ -1,4 +1,7 @@
-<img width="1216" height="596" alt="image" src="https://github.com/user-attachments/assets/405b0151-0a6e-4330-a350-b8dc44ba761c" />📌 프로젝트 개요
+<img width="865" height="487" alt="image" src="https://github.com/user-attachments/assets/69fd64eb-eeff-4ed1-9ede-0484083158a4" />
+<img width="865" height="486" alt="image" src="https://github.com/user-attachments/assets/3953e8b4-38bf-4814-b4fe-a21774ae8354" />
+
+📌 프로젝트 개요
 
 이 프로젝트는 BACnet/Modbus 장치 데이터를 시뮬레이션하고, SQLite DB에 저장하며, REST API와 WebSocket을 통해 데이터를 실시간으로 제공하는 백엔드 시스템입니다.
 포트폴리오용으로 설계되었으며, 실제 AI DCIM/Smart BEMS 시스템에서 수행했던 데이터 수집, 실시간 모니터링, CRUD 작업, WebSocket 실시간 전송을 시뮬레이션합니다.
