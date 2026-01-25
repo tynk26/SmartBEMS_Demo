@@ -4,19 +4,20 @@
 포트폴리오용으로 설계되었으며, 실제 AI DCIM/Smart BEMS 시스템에서 수행했던 데이터 수집, 실시간 모니터링, CRUD 작업, WebSocket 실시간 전송을 시뮬레이션합니다.
 
 🏗️ 아키텍처 개요
-[Simulated Devices] ---> [Cron Job / Device Simulator] ---> [SQLite DB]
-                                                  |
-                                                  v
-                                  +-------------------------------+
-                                  |  Backend (Python + FastAPI)   |
-                                  |                               |
-                                  | 1) REST API (/devices)       |
-                                  | 2) WebSocket (/ws/devices)   |
-                                  +-------------------------------+
-                                                  |
-                                                  v
-                                    [Websocket Test HTML Dashboard]
-                                  (실시간 데이터 확인 및 시각화)
+🏗️ 아키텍처 개요
+[Simulated Devices]
+    ↓
+[Cron Job / Device Simulator]
+    ↓
+[SQLite DB]
+    ↓
+[Backend (Python + FastAPI)]
+    - 1) REST API (/devices)
+    - 2) WebSocket (/ws/devices)
+    ↓
+[WebSocket Test HTML Dashboard]
+    (실시간 데이터 확인 및 시각화)
+
 
 
 장치 데이터 시뮬레이션: BACnet/Modbus 장치를 모방하여 임의 데이터 생성
