@@ -5,9 +5,6 @@
 
 🏗️ 아키텍처 개요ss
 
-
-
-
 [Simulated Devices]
 ↓
 [Cron Job / Device Simulator]
