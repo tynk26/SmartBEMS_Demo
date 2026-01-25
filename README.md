@@ -3,16 +3,10 @@
 이 프로젝트는 BACnet/Modbus 장치 데이터를 시뮬레이션하고, SQLite DB에 저장하며, REST API와 WebSocket을 통해 데이터를 실시간으로 제공하는 백엔드 시스템입니다.
 포트폴리오용으로 설계되었으며, 실제 AI DCIM/Smart BEMS 시스템에서 수행했던 데이터 수집, 실시간 모니터링, CRUD 작업, WebSocket 실시간 전송을 시뮬레이션합니다.
 
-🏗️ 아키텍처 개요ss
+🏗️ 아키텍처 개요
 
-[Simulated Devices]
-↓
-[Cron Job / Device Simulator]
-↓
-[SQLite DB]
-↓
-[Backend (Python + FastAPI)] - 1) REST API (/devices) - 2) WebSocket (/ws/devices)
-↓
+[Simulated Devices]  
+[Cron Job / Device Simulator] <br>-> [SQLite DB] <br>-> [Backend (Python + FastAPI)] <br>-> 1) REST API (/devices) <br>- 2) WebSocket (/ws/devices)
 [WebSocket Test HTML Dashboard]
 (실시간 데이터 확인 및 시각화)
 
