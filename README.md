@@ -3,9 +3,18 @@
 이 프로젝트는 BACnet/Modbus 장치 데이터를 시뮬레이션하고, SQLite DB에 저장하며, REST API와 WebSocket을 통해 데이터를 실시간으로 제공하는 백엔드 시스템입니다.
 포트폴리오용으로 설계되었으며, 실제 AI DCIM/Smart BEMS 시스템에서 수행했던 데이터 수집, 실시간 모니터링, CRUD 작업, WebSocket 실시간 전송을 시뮬레이션합니다.
 
-🏗️ 아키텍처 개요
+<br># Terminal 1: DB initialization (once)
+python -m backend.db.init_db
 
-[Simulated Devices]  
+<br># Terminal 2: Start cron job simulator
+python -m backend.cron_jobs.fetch_device_data
+
+<br># Terminal 3: Start WebSocket server
+uvicorn backend.api.websocket:app --reload --port 8001
+
+<br># Terminal 4: Serve frontend
+python -m http.server 5500
+
 🏗️ 아키텍처 개요
 [Simulated Devices] <br>
 ↓ <br>
@@ -34,10 +43,11 @@ WebSocket: 실시간 데이터 푸시를 통해 클라이언트에서 즉시 확
 python -m backend.db.init_db<br>
 
 1-2. 장치 데이터 시뮬레이션 실행
-python backend/devices/simulator.py <br>
+python -m backend.devices.simulator <br>
 
 1-3. Cron Job으로 주기적 데이터 삽입
-python -m backend.cron_jobs.fetch_device_data <br>
+python -m backend.cron_jobs.fetch_device_data
+<br>
 
 프로젝트 루트에서 실행하며, SQLite DB에 장치 데이터가 5초마다 삽입됩니다.
 
@@ -49,7 +59,8 @@ http://127.0.0.1:8000/devices
 
 3️⃣ WebSocket 실시간 데이터
 3-1. WebSocket 서버 실행
-uvicorn backend.api.websocket:app --reload --port 8001 <br>
+uvicorn backend.api.websocket:app --reload --port 8001
+<br>
 
 3-2. 프론트엔드 테스트 서버 실행
 python -m http.server 5500 <br>
