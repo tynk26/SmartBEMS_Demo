@@ -38,6 +38,8 @@ python -m backend.cron_jobs.fetch_device_data
 
 프로젝트 루트에서 실행하며, SQLite DB에 장치 데이터가 5초마다 삽입됩니다.
 
+프로젝트 루트에서 실행하며, SQLite DB에 장치 데이터가 5초마다 삽입됩니다.
+
 2️⃣ REST API 데이터 조회
 uvicorn backend.api.rest:app --reload
 
@@ -54,7 +56,7 @@ python -m http.server 5500
 3-3. WebSocket 클라이언트 접속
 
 브라우저에서 다음 주소 열기:
-http://127.0.0.1:5500/frontend_test.html
+http://127.0.0.1:5500/websocket.html
 
 WebSocket 서버에서 실시간으로 전송되는 장치 데이터를 HTML 페이지에서 확인할 수 있습니다.
 
