@@ -14,7 +14,6 @@ python -m backend.cron_jobs.fetch_device_data
 
 <img width="1050" height="732" alt="image" src="https://github.com/user-attachments/assets/90c2232e-d20a-4819-9d7e-9bfab91bb6f5" />
 
-<<<<<<< HEAD
 2. REST API for Data Polling
    uvicorn backend.api.rest:app --reload
    http://127.0.0.1:8000/devices
@@ -30,5 +29,3 @@ python -m backend.cron_jobs.fetch_device_data
 
 <img width="1121" height="717" alt="image" src="https://github.com/user-attachments/assets/43f8d93a-1760-4ed6-bfbc-193d0d7cbb5a" />
 
-=======
->>>>>>> 1403441a741ec99191dcd259b1a8e53979fe62df
