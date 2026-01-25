@@ -20,8 +20,15 @@ python -m backend.cron_jobs.fetch_device_data
    http://127.0.0.1:8000/devices
    <img width="1022" height="309" alt="image" src="https://github.com/user-attachments/assets/014d2305-b7f2-406b-b9ec-57a8bd4fa7ab" />
 
-3. WebSocket for Server Pushing
+3. WebSocket for Continuous Server Pushing to Client (websocket.html)
+   3-1. RUN Websocket Server
    uvicorn backend.api.websocket:app --reload --port 8001
-   The websocket server runs at ws://127.0.0.1:8001/ws/devices
+   3-2. RUN CRON job
+   python -m http.server 5500
+   3.3. Check Websocket Client
+   http://127.0.0.1:5500/frontend_test.html
+
+<img width="1121" height="717" alt="image" src="https://github.com/user-attachments/assets/43f8d93a-1760-4ed6-bfbc-193d0d7cbb5a" />
+
 =======
 >>>>>>> 1403441a741ec99191dcd259b1a8e53979fe62df
