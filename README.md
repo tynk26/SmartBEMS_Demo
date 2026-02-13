@@ -70,6 +70,7 @@ uvicorn backend.api.rest:app --reload
 http://127.0.0.1:8000/devices
 
 3️⃣ WebSocket 실시간 데이터
+<br>
 3-1. WebSocket 서버 실행
 uvicorn backend.api.websocket:app --reload --port 8001
 <br>
